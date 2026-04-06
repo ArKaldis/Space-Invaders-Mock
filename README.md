@@ -1,6 +1,6 @@
-# Star Siege
+# Space Invaders
 
-Star Siege is a small browser arcade game that blends two classic ideas:
+Space Invaders is a small browser arcade game that blends two classic ideas:
 
 - Space Invaders style enemy waves
 - Asteroids style drifting hazards
