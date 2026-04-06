@@ -1,0 +1,141 @@
+:root {
+  --bg: #04111f;
+  --panel: rgba(5, 18, 35, 0.85);
+  --line: rgba(126, 208, 255, 0.25);
+  --glow: #6de2ff;
+  --accent: #ff6b6b;
+  --gold: #ffd166;
+  --text: #eef7ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Orbitron", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top, rgba(51, 140, 255, 0.2), transparent 38%),
+    radial-gradient(circle at bottom, rgba(255, 107, 107, 0.12), transparent 30%),
+    linear-gradient(180deg, #02060d 0%, #04111f 45%, #020814 100%);
+}
+
+.shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.panel {
+  width: min(1040px, 100%);
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent),
+    var(--panel);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+}
+
+.hud,
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+
+.hud {
+  margin-bottom: 16px;
+}
+
+.hud > div {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(238, 247, 255, 0.7);
+}
+
+strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 1.4rem;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 22px;
+  border: 1px solid rgba(109, 226, 255, 0.2);
+  background: linear-gradient(180deg, rgba(8, 20, 38, 0.92), rgba(2, 9, 19, 0.98));
+}
+
+.footer {
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.footer p {
+  margin: 0;
+  color: rgba(238, 247, 255, 0.82);
+}
+
+button {
+  border: 0;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font: inherit;
+  color: #04111f;
+  background: linear-gradient(135deg, var(--gold), #fff2b3);
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+  box-shadow: 0 12px 30px rgba(255, 209, 102, 0.25);
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 34px rgba(255, 209, 102, 0.32);
+}
+
+@media (max-width: 720px) {
+  .shell {
+    padding: 12px;
+  }
+
+  .panel {
+    padding: 12px;
+    border-radius: 20px;
+  }
+
+  .hud {
+    gap: 10px;
+  }
+
+  .hud > div {
+    padding: 10px 12px;
+  }
+
+  strong {
+    font-size: 1.05rem;
+  }
+
+  .footer {
+    justify-content: center;
+    text-align: center;
+  }
+}
